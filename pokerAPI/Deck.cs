@@ -5,27 +5,30 @@ using System.Text;
 namespace pokerAPI
 {
 
-    public class Deck
+    public class Deck:Card
     {
 
-        int[] rank = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
-        string[] suit = { "D", "H", "S", "C" };
-
-        private List<string> cardDeck;
+       
+        private List<Card> cardDeck;
 
         public Deck() {
-            cardDeck = new List<string>();
-           
+            cardDeck = new List<Card>();
+
+            CreateDeck();
         }
 
-        public List<string> currentCardDeck { get { return cardDeck; } }
+        public List<Card> currentCardDeck { get { return cardDeck; } }
         
         public void CreateDeck() //Creating of deck
         {
-         
+            Console.WriteLine("dsadadsadsad");
             foreach (String s in suit) {
-                foreach (int i in rank) {
-                    cardDeck.Add(i+s);
+                foreach (int r in rank) {
+                    _rank = r;
+                    _suit = s;
+
+                    cardDeck.Add(new Card {_rank = r,_suit=s}); //add  rank and suit
+                    
                 }
             }
 
