@@ -9,7 +9,7 @@ namespace pokerAPI
     {
 
        
-        private List<Card> cardDeck;
+         List<Card> cardDeck;
 
         public Deck() {
             cardDeck = new List<Card>();
@@ -21,7 +21,7 @@ namespace pokerAPI
         
         public void CreateDeck() //Creating of deck
         {
-            Console.WriteLine("dsadadsadsad");
+            
             foreach (String s in suit) {
                 foreach (int r in rank) {
                     _rank = r;

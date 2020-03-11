@@ -11,9 +11,9 @@ namespace pokerConsole
     {
         static void Main(string[] args)
         {
-            new Deck();
-            Player mako =  new Player("Mako");
-            new Player("Paula");
+            var deck =  new Deck(); //Create a new deck of cards
+            new Player("Mako", deck);
+            new Player("Paula", deck);
             Console.ReadLine();
         }
     }

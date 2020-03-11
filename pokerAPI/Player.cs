@@ -4,22 +4,23 @@ using System.Text;
 
 namespace pokerAPI
 {
-    public class Player:Deck
+    public class Player:Card
     {
 
         List<Card> playerhand;
-    
+        Deck _deck;
 
         private string _name;
 
 
-        public Player(string name) {
+        public Player(string name,Deck deck) {
              
             _name = name;
+            _deck = deck;
             playerhand = new List<Card>();
-         
+            Console.WriteLine("=================");
             dealPlayer();
-           
+            Console.WriteLine("=================");
         }
 
 
@@ -27,18 +28,22 @@ namespace pokerAPI
 
             int playerCardCount ;
             for (playerCardCount = 0; playerCardCount < 5; playerCardCount++) {
-                playerhand.Add(currentCardDeck[playerCardCount]);
+                playerhand.Add(_deck.currentCardDeck[playerCardCount]);
             }
 
-           currentCardDeck.RemoveRange(0, 5);
+            _deck.currentCardDeck.RemoveRange(0, 5);
+           
 
-            foreach (Card s in currentCardDeck) {
+            foreach (Card s in _deck.currentCardDeck) {
                 Console.WriteLine(s._rank + s._suit);            
             }
 
             
 
         }
+
+
+
 
 
     }
