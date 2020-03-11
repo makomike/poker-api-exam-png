@@ -18,11 +18,17 @@ namespace pokerAPI
             _name = name;
             _deck = deck;
             playerhand = new List<Card>();
-            Console.WriteLine("=================");
+           
             dealPlayer();
-            Console.WriteLine("=================");
+
         }
 
+
+        /// <summary>
+        /// 
+        /// Dealer method
+        /// 
+        /// </summary>
 
         public void dealPlayer() {
 
@@ -35,14 +41,14 @@ namespace pokerAPI
            
 
             foreach (Card s in _deck.currentCardDeck) {
-                Console.WriteLine(s._rank + s._suit);            
+                //Console.WriteLine(s._rank + s._suit);            
             }
 
             
 
         }
 
-
+        
 
 
 
