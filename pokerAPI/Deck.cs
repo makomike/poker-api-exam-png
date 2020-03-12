@@ -39,34 +39,40 @@ namespace pokerAPI
 
             int i;
             int cardCount = cardDeck.Count;
-            for (i = 0; i < 1000; i++)
+            int firstCard_Index;
+            int secondCard_Index;
+
+            Random r = new Random();
+
+            for (i = 0; i < 1500; i++)
             {
-                int firstCard_Index = new Random().Next(cardCount);
-                int secondCard_Index = new Random().Next(cardCount);
-
-
+                firstCard_Index = r.Next(cardCount);
+                secondCard_Index = r.Next(cardCount);
                 if (firstCard_Index != secondCard_Index)
-                {
+                {   
                     List<Card> temp = new List<Card>();
+
                     temp.Add(cardDeck[firstCard_Index]);
-                    cardDeck.Insert(firstCard_Index, cardDeck[secondCard_Index]);
-                    cardDeck.Insert(secondCard_Index, temp[0]);
+
+
+                    cardDeck[firstCard_Index] = cardDeck[secondCard_Index];
+                    cardDeck[secondCard_Index] = temp[0];
+
+                    //cardDeck.Insert(firstCard_Index, cardDeck[secondCard_Index]); 
+                    //cardDeck.Insert(secondCard_Index, temp[0]);
 
                 }
 
-
-              
-
             }
- 
 
-            //cardDeck.Insert(0, new Card { _rank = 1, _suit = "C" });
-            int ccc =1;
-            foreach (Card c in cardDeck){
-                //Console.WriteLine(c._rank + c._suit + " " + ccc);
-                //ccc++;
-            }
            
+            int ccc =0;
+            foreach (Card c in cardDeck)
+            {
+                //Console.WriteLine(c._rank + c._suit + ccc);
+                ccc++;
+            }
+
             
 
         }

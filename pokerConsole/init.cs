@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using pokerAPI;
-
 namespace pokerConsole
 {
-    class Program
+    class init
     {
-        static void Main(string[] args)
-        {
-            new init();//start the game
-            Console.ReadLine();
-
+        public init() {
+            new Game();
         }
     }
 }
